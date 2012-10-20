@@ -1,5 +1,5 @@
 = render '/users/lead'
 
-= link_to 'Signaler un incident', issue_steps_path, class: 'btn btn-block btn-large'
-= link_to "Suivre mes incidents (#{current_user.issues.count})", my_issues_path, class: 'btn btn-block btn-large'
-= link_to 'Incident autour de moi', arround_me_issues_path, class: 'btn btn-block btn-large'
+= link_to 'Signaler', issue_steps_path, class: 'btn btn-block btn-large btn-primary'
+= link_to "Suivre mes signalement (#{current_user.issues.count})", my_issues_path, class: 'btn btn-block btn-large'
+= link_to 'Signalements autour de moi', arround_me_issues_path, class: 'btn btn-block btn-large'
