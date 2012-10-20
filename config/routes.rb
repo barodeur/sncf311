@@ -13,6 +13,12 @@ Cheminotshack::Application.routes.draw do
 
   namespace :backoffice do
     root to: 'backoffice#dashboard'
+    resources :issues do
+      post :transfert, on: :member
+    end
+  end
+
+  namespace :ext do
     resources :issues
   end
 end

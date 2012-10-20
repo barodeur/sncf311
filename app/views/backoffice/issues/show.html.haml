@@ -1,3 +1,10 @@
 %h2= "Signalement ##{@issue.id}"
 
 = render '/shared/issue_infos', issue: @issue
+
+%h3 Transfert
+= form_tag transfert_backoffice_issue_path(@issue), class: 'form-search' do
+  = text_field_tag 'email', '', placeholder: 'email'
+  = submit_tag 'transferer', class: 'btn'
+
+%h3 Mettre à jour

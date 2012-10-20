@@ -44,6 +44,7 @@
     .container
       .content
         - if content_for? :content
+          = bootstrap_flash
           = yield :content
         - else
           .well.well-small
