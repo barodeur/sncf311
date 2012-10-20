@@ -8,4 +8,6 @@ Cheminotshack::Application.routes.draw do
     get :arround_me, on: :collection
   end
   resources :issue_steps
+
+  match '/update_location', to: 'users#update_location', via: :post
 end

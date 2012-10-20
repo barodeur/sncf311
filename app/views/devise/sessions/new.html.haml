@@ -1,4 +1,7 @@
 %h1 SNCF 311
 %p.lead
   Petite phrase d'accroche!
+
 = link_to "Se connecter avec facebook", user_omniauth_authorize_path(:facebook), class: 'btn btn-block btn-large btn-primary'
+
+%p= link_to "Cliquez ici si vous n'avez pas de compte facebook", new_user_registration_path
