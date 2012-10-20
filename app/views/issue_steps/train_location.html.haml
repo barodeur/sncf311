@@ -1,3 +1,7 @@
-= simple_form_for @issue, url: next_wizard_path do |f|
-  = f.input :bottom_or_top, collection: ['Salle haute', 'Salle basse']
-  = f.button :submit
+.well.well-small
+  %h2 Position dans le train
+  = simple_form_for @issue, url: next_wizard_path do |f|
+    = f.input :bottom_or_top, as: :radio, label: false, collection: ['Salle haute', 'Salle basse', 'Plateforme']
+    .control-group
+      .controls
+        = f.button :submit, 'Signaler!', class: 'btn btn-large btn-primary btn-block'

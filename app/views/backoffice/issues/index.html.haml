@@ -1,0 +1,15 @@
+%table.table
+  %thead
+    %tr
+      %th #
+      %th Type de signalement
+      %th Date du signalement
+      %th Statut
+  %tbody
+    - @issues.each do |issue|
+      %tr
+        %td 0
+        %td= issue.type
+        %td= l issue.submited_at
+        %td= issue.state
+

@@ -42,7 +42,10 @@
                 %li= link_to 'Deconnexion', destroy_user_session_path, method: :delete
     .container
       .content
-        = bootstrap_flash
-        = yield
+        - if content_for? :content
+          = yield :content
+        - else
+          = bootstrap_flash
+          = yield
       %footer
     = javascript_include_tag "application"

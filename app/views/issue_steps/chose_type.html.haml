@@ -1,21 +1,34 @@
-.issue-types
-  .third
-    = link_to next_wizard_path(type: 'light'), class: 'thumbnail' do
-      = image_tag 'issue-light.png'
-      Eclairage
-  .third
-    = link_to next_wizard_path(type: 'door'), class: 'thumbnail' do
-      = image_tag 'issue-door.png'
-      Porte
-  .third
-    = link_to next_wizard_path(type: 'radiator'), class: 'thumbnail' do
-      = image_tag 'issue-radiator.png'
-      Chauffage
-  .third
-    = link_to next_wizard_path(type: 'radiator'), class: 'thumbnail' do
-      = image_tag 'issue-radiator.png'
-      Vitre
-  .third
-    = link_to next_wizard_path(type: 'radiator'), class: 'thumbnail' do
-      = image_tag 'issue-radiator.png'
-      Chauffage
+.well.well-small.clearfix
+  .issue-types
+    .third
+      = link_to next_wizard_path(type: 'light'), class: 'thumbnail' do
+        = image_tag 'eclairage.png'
+        Eclairage
+    .third
+      = link_to next_wizard_path(type: 'door'), class: 'thumbnail' do
+        = image_tag 'porte.png'
+        Porte
+    .third
+      = link_to next_wizard_path(type: 'accident-personne'), class: 'thumbnail' do
+        = image_tag 'accident-personne.png'
+        Accident de personne
+    .third
+      = link_to next_wizard_path(type: 'proprete'), class: 'thumbnail' do
+        = image_tag 'proprete.png'
+        Proprete
+    .third
+      = link_to next_wizard_path(type: 'vitre'), class: 'thumbnail' do
+        = image_tag 'vitre.png'
+        Vitre
+    .third
+      = link_to next_wizard_path(type: 'confort'), class: 'thumbnail' do
+        = image_tag 'confort.png'
+        Confort
+    .third
+      = link_to next_wizard_path(type: 'info-voyageur'), class: 'thumbnail' do
+        = image_tag 'info-voyageur.png'
+        Info voyageur
+    .third
+      = link_to next_wizard_path(type: 'autre'), class: 'thumbnail' do
+        = image_tag 'autre.png'
+        Autre

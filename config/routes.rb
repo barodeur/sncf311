@@ -10,4 +10,9 @@ Cheminotshack::Application.routes.draw do
   resources :issue_steps
 
   match '/update_location', to: 'users#update_location', via: :post
+
+  namespace :backoffice do
+    root to: 'backoffice#dashboard'
+    resources :issues
+  end
 end

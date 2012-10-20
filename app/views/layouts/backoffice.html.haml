@@ -1,0 +1,45 @@
+- content_for :content do
+  .row
+    .span3
+      .well.sidebar-nav
+        %ul.nav.nav-list
+          %li.nav-header
+          %li.nav-header
+            Les signalements
+          %li
+            %a.tooltipe{"data-original-title" => "#{@waiting_issues_count[:materiel]} signalements en attente", "data-placement" => "right", :href => backoffice_issues_path(cat: 'materiel'), :rel => "tooltip"}
+              %span.badge{class: @waiting_issues_count[:materiel] > 0 ? 'badge-important' : 'badge-success' }= @waiting_issues_count[:materiel]
+              Materiel
+          %li
+            %a.tooltipe{"data-original-title" => "#{@waiting_issues_count[:infra]} signalements en attente", "data-placement" => "right", :href => backoffice_issues_path(cat: 'infra'), :rel => "tooltip"}
+              %span.badge{class: @waiting_issues_count[:infra] > 0 ? 'badge-important' : 'badge-success' }= @waiting_issues_count[:infra]
+              Infra
+          %li
+            %a.tooltipe{"data-original-title" => "#{@waiting_issues_count[:gare]} signalement en attente", "data-placement" => "right", :href => backoffice_issues_path(cat: 'gare'), :rel => "tooltip"}
+              %span.badge{class: @waiting_issues_count[:gare] > 0 ? 'badge-important' : 'badge-success' }= @waiting_issues_count[:gare]
+              Gare & Connexion
+          %li
+            %a.tooltipe{"data-original-title" => "#{@waiting_issues_count[:infra]} signalements en attente", "data-placement" => "right", :href => backoffice_issues_path(cat: 'voyage_sncf'), :rel => "tooltip"}
+              %span.badge{class: @waiting_issues_count[:voyage_sncf] > 0 ? 'badge-important' : 'badge-success' }= @waiting_issues_count[:voyage_sncf]
+              Voyage SNCF
+          %li.nav-header
+            Statistiques
+          %li
+            %a{:href => "#"} Les signalements
+          %li
+            %a{:href => "#"} Le traitement
+          %li.nav-header
+            Paramètre du compte utilisateur
+          %li
+            %a{:href => "#"} Mes informations
+          %li
+            %a{:href => "#"} Mon mot de passe
+          %li
+            %a{:href => "#"} Mes contacts favoris
+          %li.nav-header
+            Administration
+          %li
+            %a{:href => "#"} Accèder à l'administration de l'application
+    .span9
+      .well= yield
+= render template: '/layouts/application'
