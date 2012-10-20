@@ -1,15 +1,15 @@
 %table.table
   %thead
     %tr
-      %th #
+      %th #id
       %th Type de signalement
       %th Date du signalement
       %th Statut
   %tbody
     - @issues.each do |issue|
       %tr
-        %td 0
-        %td= issue.type
+        %td= link_to issue.id, [:backoffice, issue]
+        %td= issue.issue_type
         %td= l issue.submited_at
         %td= issue.state
 

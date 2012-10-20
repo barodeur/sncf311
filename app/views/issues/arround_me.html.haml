@@ -1,2 +1,8 @@
-%ul.issues
-  = render partial: 'issue', collection: @issues
+%table.table.issues
+  %thead
+    %th ID
+    %th Type de signalement
+    %th Date de signalement
+    %th
+  %tbody
+    = render partial: 'issue', collection: @issues

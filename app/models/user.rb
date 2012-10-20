@@ -51,6 +51,7 @@ class User
 
   field :ll, type: Array, default: []
 
+  field :name
   field :is_admin, type: Boolean
 
   def avatar_url

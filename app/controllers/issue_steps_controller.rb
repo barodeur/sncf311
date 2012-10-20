@@ -20,7 +20,7 @@ class IssueStepsController < ApplicationController
     when :chose_type
       @issue.update_attribute :train_id, params[:train_id]
     when :train_location
-      @issue.update_attribute :type, params[:type]
+      @issue.update_attribute :issue_type, params[:type]
     end
     render_wizard
   end

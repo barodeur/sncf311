@@ -1,1 +1,8 @@
-%li.issue=issue.train.name
+%tr.issue
+  %td= issue.id
+  %td= issue.issue_type
+  %td= l issue.submited_at
+  %td
+    = link_to issue, class: 'btn btn-small btn-info' do
+      %i.icon-eye-open
+      voir

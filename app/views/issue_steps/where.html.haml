@@ -1,12 +1,11 @@
-.well.well-small
-  %h2 Étape 1, je suis..
+%h2 Étape 1, je suis..
 
-  = link_to next_wizard_path(where: 'train'), class: 'btn btn-block' do
-    = image_tag 'train.png', style: 'width: 30px'
-    dans un train
-  = link_to next_wizard_path(where: 'gare'), class: 'btn btn-block' do
-    = image_tag 'gare.png', style: 'width: 30px'
-    dans une gare
-  = link_to next_wizard_path(where: 'voies'), class: 'btn btn-block' do
-    = image_tag 'rail.png', style: 'width: 30px'
-    à proximité des voies
+= link_to next_wizard_path(where: 'train'), class: 'btn btn-block' do
+  = image_tag 'train.png', style: 'width: 30px'
+  dans un train
+= link_to next_wizard_path(where: 'gare'), class: 'btn btn-block' do
+  = image_tag 'gare.png', style: 'width: 30px'
+  dans une gare
+= link_to next_wizard_path(where: 'voies'), class: 'btn btn-block' do
+  = image_tag 'rail.png', style: 'width: 30px'
+  à proximité des voies

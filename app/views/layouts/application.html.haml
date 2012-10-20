@@ -38,13 +38,16 @@
               %li= link_to 'Mes signalements', my_issues_path
               %li= link_to 'Signalement autour de moi', arround_me_issues_path
               - if user_signed_in?
+                - if current_user.admin?
+                  %li= link_to 'Administration', backoffice_root_path
                 %li= link_to 'Deconnexion', destroy_user_session_path, method: :delete
     .container
       .content
         - if content_for? :content
           = yield :content
         - else
-          = bootstrap_flash
-          = yield
+          .well.well-small
+            = bootstrap_flash
+            = yield
       %footer
     = javascript_include_tag "application"

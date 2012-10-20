@@ -1,0 +1,22 @@
+.row
+  - if current_user == issue.author || current_user.admin?
+    .span4
+      %h3 Rapporteur
+      %dl.dl
+        %dt Nom
+        %dd= @issue.author.name
+        %dt Email
+        %dd= link_to @issue.author.email, "mailto:#{@issue.author.email}"
+  .span4
+    %h3 Localisation
+    %dl
+      %dt Lieu du signalement
+      %dd
+        = @issue.train.ll.join(', ')
+        %small{style: 'color:grey'}= Geocoder.search(@issue.train.ll).first.address
+      %dt Numéro de rame
+      %dd= @issue.train.n_rame
+      %dt Emplacement dans la rame
+      %dd
+        %p= @issue.bottom_or_top
+        %p= @issue.in_train

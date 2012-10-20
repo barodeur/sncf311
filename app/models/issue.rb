@@ -12,12 +12,21 @@ class Issue
   field :ll, type: Array
   field :bottom_or_top
   field :in_train
+  field :issue_type
   field :submited_at, type: DateTime
   field :cat
   belongs_to :train
   default_scope -> {where(:submited_at.ne => nil)}
 
   def set_cat
-    self.cat = 'materiel'
+    map = {
+      'materiel' => ['Eclairage', 'Porte'],
+      'infra' => [],
+      'gare' => ['Accident de personne'],
+      'voyage_sncf' => []
+    }
+    map.each do |cat, ary|
+      self.cat = cat if ary.include?(self.issue_type)
+    end
   end
 end

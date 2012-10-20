@@ -1,15 +1,14 @@
-.well.well-small
-  %table.table.trains
-    %thead
-      %tr
-        %th
-          Selectionnez votre train
-          %small{style: 'color: grey;font-weight:300'}= "(à proximité de #{@location.address})"
-    %tbody
-    - @trains.each do |train|
-      %tr.train
-        %td
-          = link_to next_wizard_path(train_id: train.id) do
-            = raw "<b>#{train.name}</b> en direction de <b>#{train.to}</b>"
-  %br
-  = link_to 'mon train n\'est pas dans la liste', '#', class: 'btn btn-small'
+%table.table.trains
+  %thead
+    %tr
+      %th
+        Selectionnez votre train
+        %small{style: 'color: grey;font-weight:300'}= "(à proximité de #{@location.address})"
+  %tbody
+  - @trains.each do |train|
+    %tr.train
+      %td
+        = link_to next_wizard_path(train_id: train.id) do
+          = raw "<b>#{train.name}</b> en direction de <b>#{train.to}</b>"
+%br
+= link_to 'mon train n\'est pas dans la liste', '#', class: 'btn btn-small'

@@ -7,4 +7,5 @@ class Train
   field :from
   field :to
   field :current_ll, type: Array
+  field :n_rame
 end
