@@ -1,5 +1,9 @@
 class IssuesController < ApplicationController
   def my
-    render text: current_user.issues.count
+    @issues = current_user.issues
+  end
+
+  def arround_me
+    @issues = Issue.all
   end
 end
