@@ -51,8 +51,14 @@ class User
 
   field :ll, type: Array, default: []
 
+  field :is_admin, type: Boolean
+
   def avatar_url
     "https://gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}"
+  end
+
+  def admin?
+    is_admin
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

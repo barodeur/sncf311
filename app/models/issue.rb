@@ -11,7 +11,7 @@ class Issue
   field :state, default: 'pending'
   field :ll, type: Array
   field :bottom_or_top
-  field :in_train, type: Integer
+  field :in_train
   field :submited_at, type: DateTime
   field :cat
   belongs_to :train
