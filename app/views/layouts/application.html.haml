@@ -37,7 +37,7 @@
             %ul.nav
               %li= link_to 'Signaler un incident', issue_steps_path
               %li= link_to 'Suivre mes incidents', my_issues_path
-              %li= link_to 'Incident autour de moi', arround_me_issues_path
+              %li= link_to 'Incidents autour de moi', arround_me_issues_path
               - if user_signed_in?
                 %li= link_to 'Deconnexion', destroy_user_session_path, method: :delete
     .container
