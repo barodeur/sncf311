@@ -21,4 +21,8 @@ Cheminotshack::Application.routes.draw do
   namespace :ext do
     resources :issues
   end
+
+  resource :user do
+    post :change_location
+  end
 end

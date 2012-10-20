@@ -1,0 +1,33 @@
+= link_to 'Deconnexion', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-block btn-large'
+
+%br
+
+%h3 Change location
+= form_tag change_location_user_path, class: 'form-horizontal' do
+  .control-group
+    %label.control-label Latitude
+    .controls
+      = text_field_tag 'latitude', @user.ll.first, disabled: @user.gps
+  .control-group
+    %label.control-label Longitude
+    .controls
+      = text_field_tag 'longitude', @user.ll.last, disabled: @user.gps
+  .control-group
+    %label.control-label Use GPS
+    .controls
+      = check_box_tag 'gps', @user.gps, class: 'do-toggle-gps'
+  .control-group
+    .controls
+      = submit_tag
+
+:javascript
+  function toggleDisable(e) {
+    e.disabled = !e.disabled
+  }
+
+  jQuery(function() {
+    $('input[name="gps"]').change(function() {
+      toggleDisable($('input[name="latitude"]')[0])
+      toggleDisable($('input[name="longitude"]')[0])
+    })
+  })

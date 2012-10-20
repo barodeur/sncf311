@@ -10,6 +10,7 @@
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
     %link(href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144")
     %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114")
     %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72")
@@ -20,13 +21,11 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %form.pull-right.navbar-form
+          .pull-right
             - if user_signed_in?
-              %ul.nav
-                %li
-                  %button.btn
-                    = image_tag current_user.avatar_url, style: 'height: 20px'
-                    = current_user.email
+              = link_to :user, class: 'btn' do
+                = image_tag current_user.avatar_url, style: 'height: 20px'
+                = current_user.name
           %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
             %span.icon-bar
             %span.icon-bar
@@ -51,4 +50,3 @@
             = bootstrap_flash
             = yield
       %footer
-    = javascript_include_tag "application"

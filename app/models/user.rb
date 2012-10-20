@@ -48,6 +48,7 @@ class User
   #
   field :provider
   field :uid
+  field :gps, type: Boolean, default: true
 
   field :ll, type: Array, default: []
 
