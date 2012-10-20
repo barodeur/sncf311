@@ -2,7 +2,6 @@ class Ext::IssuesController < Ext::ExtController
   before_filter :load_issue
 
   def show
-    render text: @issue.id
   end
 
   protected

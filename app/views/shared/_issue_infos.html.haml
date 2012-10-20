@@ -1,12 +1,11 @@
 .row
-  - if current_user == issue.author || current_user.admin?
-    .span4
-      %h3 Rapporteur
-      %dl.dl
-        %dt Nom
-        %dd= @issue.author.name
-        %dt Email
-        %dd= link_to @issue.author.email, "mailto:#{@issue.author.email}"
+  .span4
+    %h3 Rapporteur
+    %dl.dl
+      %dt Nom
+      %dd= @issue.author.name
+      %dt Email
+      %dd= link_to @issue.author.email, "mailto:#{@issue.author.email}"
   .span4
     %h3 Localisation
     %dl

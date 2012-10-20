@@ -29,8 +29,8 @@ class IssueStepsController < ApplicationController
     @issue = Issue.unscoped.find session[:current_issue_id]
     @issue.submited_at = Time.now
     if @issue.update_attributes params[:issue]
-      flash[:success] = "Merci d'avoir rapporté cette incident"
+      flash[:success] = "Merci d'avoir rapporté ce signalement."
     end
-    redirect_to :root
+    redirect_to my_issues_path
   end
 end
