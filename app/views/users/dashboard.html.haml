@@ -1,6 +1,4 @@
-%h1 SNCF 311
-%p.lead
-  Petite phrase d'accroche!
+= render '/users/lead'
 
 = link_to 'Signaler un incident', issue_steps_path, class: 'btn btn-block btn-large'
 = link_to "Suivre mes incidents (#{current_user.issues.count})", my_issues_path, class: 'btn btn-block btn-large'
