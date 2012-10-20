@@ -1,0 +1,3 @@
+= simple_form_for @issue, url: next_wizard_path do |f|
+  = f.input :bottom_or_top, collection: ['Salle haute', 'Salle basse']
+  = f.button :submit

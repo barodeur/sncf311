@@ -9,6 +9,8 @@ class User
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
 
+  has_many :issues, inverse_of: :author
+
   ## Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""

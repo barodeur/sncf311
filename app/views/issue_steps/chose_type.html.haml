@@ -1,5 +1,10 @@
 .issue-types
-  .row
-    .span4
-    .span4
-    .span4
+  .third
+    = link_to next_wizard_path(type: 'light'), class: 'thumbnail' do
+      = image_tag 'issue-light.png'
+  .third
+    = link_to next_wizard_path(type: 'rail'), class: 'thumbnail' do
+      = image_tag 'issue-rail.png'
+  .third
+    = link_to next_wizard_path(type: 'radiator'), class: 'thumbnail' do
+      = image_tag 'issue-radiator.png'
