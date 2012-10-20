@@ -29,3 +29,7 @@ Cheminotshack::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+# Facebook dev app
+ENV['FACEBOOK_APP_ID'] ||= "284953748283578"
+ENV['FACEBOOK_APP_SECRET'] ||= "9b982bb9b9e3349cdd1a9b32c3a7a4c6"

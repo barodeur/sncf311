@@ -21,6 +21,13 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
+          %form.pull-right.navbar-form
+            - if user_signed_in?
+              %ul.nav
+                %li
+                  %button.btn
+                    = image_tag current_user.avatar_url, style: 'height: 20px'
+                    = current_user.email
           %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
             %span.icon-bar
             %span.icon-bar
@@ -31,7 +38,6 @@
               %li= link_to 'Signaler un incident', new_issue_path
               %li= link_to 'Suivre mes incidents', my_issues_path
               %li= link_to 'Incident autour de moi', arround_me_issues_path
-
     .container
       .content
         = bootstrap_flash

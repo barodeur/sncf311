@@ -1,5 +1,9 @@
 class IssuesController < ApplicationController
-  def new
-    @issue = Issue.new
+  def localize_me
+    render text: 'loc me'
+  end
+
+  def chose_type
+    render text: 'chose type'
   end
 end
