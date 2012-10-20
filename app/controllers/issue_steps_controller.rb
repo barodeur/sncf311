@@ -7,9 +7,11 @@ class IssueStepsController < ApplicationController
     case step
     when :where
     when :localize_me
-      @issue.where = params[:where]
+      @issue.update_attribute :where, params[:where]
+      @location = Geocoder.search(current_user.ll.join(',')).first
+      @trains = Train.all
     when :chose_type
-      @issue.train_id = params[:train_id]
+      @issue.update_attribute :train_id, params[:train_id]
     end
     render_wizard
   end

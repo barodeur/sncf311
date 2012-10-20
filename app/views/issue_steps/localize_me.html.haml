@@ -1,1 +1,11 @@
-%p.lead= "Vous etes à #{current_user.ll}"
+%p.lead= raw "Vous etes à proximité de <b>#{@location.address}</b>"
+
+%ul.trains
+  - @trains.each do |train|
+    = link_to next_wizard_path(train_id: train.id) do
+      %li.train
+        %h2
+          = train.name
+          %small= train.status
+
+
