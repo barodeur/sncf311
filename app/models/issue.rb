@@ -9,7 +9,7 @@ class Issue
   field :title
   field :description
   field :where
-  field :state, default: 'pending'
+  field :state, default: 'En attente'
   field :ll, type: Array
   field :bottom_or_top
   field :in_train
