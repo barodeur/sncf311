@@ -18,6 +18,7 @@ class Issue
   field :comment
   belongs_to :train
   default_scope -> {where(:submited_at.ne => nil)}
+  field :user_comment
 
   def set_cat
     map = {

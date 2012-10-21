@@ -2,6 +2,7 @@
 = simple_form_for @issue, url: next_wizard_path do |f|
   = f.input :in_train, as: :radio, label: false, collection: ['Tête de convoi', 'Milieu de convoi', 'Queue de convoi']
   = f.input :bottom_or_top, as: :radio, label: false, collection: ['Salle haute', 'Salle basse', 'Plateforme']
+  = f.input :user_comment, label: 'Commentaire',  as: :text, input_html: { rows: 3, class: 'span12' }
   .control-group
     .controls
       = f.button :submit, 'Signaler!', class: 'btn btn-large btn-primary btn-block span12'

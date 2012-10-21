@@ -13,6 +13,9 @@ class Ext::IssuesController < Ext::ExtController
   def urgence
   end
 
+  def coming_soon
+  end
+
   protected
   def load_issue
     @issue = Issue.find params[:id]
