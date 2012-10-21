@@ -9,6 +9,6 @@ class IssueMailer < ActionMailer::Base
 
   def informer_voyageur(issue)
     @issue = issue
-    mail to: issue.author.email, subject: "Votre signalement à été vis à jour"
+    mail to: issue.author.email, subject: "Votre signalement à été mis à jour"
   end
 end
