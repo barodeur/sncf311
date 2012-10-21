@@ -1,1 +1,8 @@
 = render '/shared/issue_infos', issue: @issue
+
+%h3 Mettre à jour
+
+= simple_form_for @issue, url: ext_issue_path(@issue) do |f|
+  = f.input :state, as: :radio, collection: ['En attente', 'En cours', 'Terminé', 'Rejeté']
+  = f.input :comment, as: :text, input_html: { rows: 3, class: 'span8' }
+  = f.button :submit

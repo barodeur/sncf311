@@ -12,7 +12,7 @@
       %dt Lieu du signalement
       %dd
         = @issue.train.ll.join(', ')
-        %small{style: 'color:grey'}= Geocoder.search(@issue.train.ll).first.address
+        %small{style: 'color:grey'}= Geocoder.search(@issue.train.ll).first.try(:address)
       %dt Numéro de rame
       %dd= @issue.train.n_rame
       %dt Emplacement dans la rame
