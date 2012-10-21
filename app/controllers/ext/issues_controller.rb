@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Ext::IssuesController < Ext::ExtController
   before_filter :load_issue
 
@@ -6,7 +7,9 @@ class Ext::IssuesController < Ext::ExtController
 
   def update
     @issue = Issue.find params[:id]
-    @issue.update_attributes params[:issue]
+    if @issue.update_attributes params[:issue]
+      flash[:success] = "Signalement mis à jour avec succès."
+    end
     redirect_to ext_issue_path(@issue)
   end
 

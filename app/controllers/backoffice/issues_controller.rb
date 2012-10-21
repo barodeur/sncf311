@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 class Backoffice::IssuesController < Backoffice::BackofficeController
   before_filter :load_issue, only: [:show, :transfert]
 
@@ -20,7 +19,9 @@ class Backoffice::IssuesController < Backoffice::BackofficeController
 
   def update
     @issue = Issue.find params[:id]
-    @issue.update_attributes params[:issue]
+    if @issue.update_attributes params[:issue]
+      flash[:success] = "Signalement mis à jour avec succès."
+    end
     IssueMailer.informer_voyageur(@issue).deliver if params[:informer_voyageur]
     redirect_to backoffice_issue_path(@issue)
   end
