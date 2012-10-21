@@ -3,7 +3,8 @@
     %tr
       %th
         Selectionnez votre train
-        %small{style: 'color: grey;font-weight:300'}= "(à proximité de #{@location.address})"
+        - if @location
+          %small{style: 'color: grey;font-weight:300'}= "(à proximité de #{@location.address})"
   %tbody
   - @trains.each do |train|
     %tr.train
