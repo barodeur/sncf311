@@ -15,6 +15,7 @@ class Issue
   field :issue_type
   field :submited_at, type: DateTime
   field :cat
+  field :comment
   belongs_to :train
   default_scope -> {where(:submited_at.ne => nil)}
 

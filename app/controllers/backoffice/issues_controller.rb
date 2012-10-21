@@ -18,6 +18,13 @@ class Backoffice::IssuesController < Backoffice::BackofficeController
     end
   end
 
+  def update
+    @issue = Issue.find params[:id]
+    @issue.update_attributes params[:issue]
+    IssueMailer.informer_voyageur(@issue).deliver if params[:informer_voyageur]
+    redirect_to backoffice_issue_path(@issue)
+  end
+
   protected
   def load_issue
     @issue = Issue.find params[:id]
