@@ -10,6 +10,9 @@ class Ext::IssuesController < Ext::ExtController
     redirect_to ext_issue_path(@issue)
   end
 
+  def urgence
+  end
+
   protected
   def load_issue
     @issue = Issue.find params[:id]

@@ -6,6 +6,7 @@ Cheminotshack::Application.routes.draw do
   resources :issues do
     get :my, on: :collection
     get :arround_me, on: :collection
+    get :urgence, on: :collection
   end
   resources :issue_steps
 

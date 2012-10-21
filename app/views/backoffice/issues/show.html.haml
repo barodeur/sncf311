@@ -12,9 +12,9 @@
 %h3 Mettre à jour
 
 = simple_form_for @issue, url: backoffice_issue_path(@issue) do |f|
-  = f.input :state, as: :radio, collection: ['En attente', 'En cours', 'Terminé', 'Rejeté']
-  = f.input :comment, as: :text, input_html: { rows: 3, class: 'span8' }
+  = f.input :state, label: 'Status', as: :radio, collection: ['En attente', 'En cours', 'Terminé', 'Rejeté']
+  = f.input :comment, label:'Commentaire', as: :text, input_html: { rows: 3, class: 'span8' }
   %label.checkbox
     = check_box_tag 'informer_voyageur'
     = "Informer le rapporteur de la mise à jour du signalement (#{@issue.author.name})"
-  = f.button :submit
+  = f.button :submit, 'Mettre à jour', class: 'btn btn-primary'
