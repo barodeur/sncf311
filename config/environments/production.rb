@@ -71,4 +71,15 @@ Cheminotshack::Application.configure do
   }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {host: 'sncf311.herokuapp.com'}
+
+  config.paperclip_defaults = {
+    storage: :fog,
+    fog_credentials: {
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      provider: ENV['FOG_PROVIDER']
+    },
+    fog_directory: ENV['FOG_DIRECTORY'],
+    fog_public: true
+  }
 end
