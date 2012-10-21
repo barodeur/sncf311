@@ -1,5 +1,6 @@
 class Issue
   include Mongoid::Document
+  include Mongoid::Paperclip
 
   belongs_to :author, class_name: 'User', inverse_of: :issues
 
@@ -19,6 +20,7 @@ class Issue
   belongs_to :train
   default_scope -> {where(:submited_at.ne => nil)}
   field :user_comment
+  has_mongoid_attached_file :picture
 
   def set_cat
     map = {

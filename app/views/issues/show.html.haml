@@ -6,5 +6,8 @@
   - if @issue.user_comment
     %dt Commentaire client
     %dd= @issue.user_comment
+  - if @issue.picture.file?
+    %dt Photo
+    %dd= link_to 'voir la photo', @issue.picture.url
 
 = render '/shared/issue_infos', issue: @issue
