@@ -49,3 +49,10 @@
             = bootstrap_flash
             = yield
       %footer
+:javascript
+  jQuery(function() {
+    $('.coming-soon').click(function(e) {
+      e.preventDefault();
+      alert('Disponible prochainement.')
+    })
+  })

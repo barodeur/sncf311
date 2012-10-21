@@ -9,11 +9,3 @@
 = link_to coming_soon_issues_path, class: 'coming-soon btn btn-block' do
   = image_tag 'rail.png', style: 'width: 30px'
   à proximité des voies
-
-:javascript
-  jQuery(function() {
-    $('.coming-soon').click(function(e) {
-      e.preventDefault();
-      alert('Disponible prochainement.')
-    })
-  })
