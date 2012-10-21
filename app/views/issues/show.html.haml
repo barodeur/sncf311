@@ -1,3 +1,10 @@
-%h2= "Signalement ##{@issue.id}"
+%h2
+  = "Signalement #{@issue.id}"
+%dl
+  %dt Type
+  %dd= @issue.issue_type
+  - if @issue.user_comment
+    %dt Commentaire client
+    %dd= @issue.user_comment
 
 = render '/shared/issue_infos', issue: @issue
