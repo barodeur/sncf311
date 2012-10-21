@@ -3,6 +3,8 @@ class IssueStepsController < ApplicationController
   include Wicked::Wizard
   steps :where, :localize_me, :chose_type, :train_location
 
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :restart
+
   def show
     if session[:current_issue_id]
       @issue = Issue.unscoped.find session[:current_issue_id]
@@ -32,5 +34,10 @@ class IssueStepsController < ApplicationController
       flash[:success] = "Merci d'avoir rapporté ce signalement."
     end
     redirect_to my_issues_path
+  end
+
+  def restart
+    session.delete(:current_issue_id)
+    redirect_to wizard_path(:where)
   end
 end
